@@ -1,38 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Press+Start+2P&display=swap");
+
+:root {
+  --primary: #08114d;
+  --secondary: #f2f3fa;
+}
+
 .App {
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  color: var(--secondary);
+  background-color: var(--primary);
+  padding: 3% 10%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.photo {
+  width: 20em;
+  border-radius: 50%;
+  border: 5px solid var(--secondary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* .general-info {
+  padding: 3em 0;
+} */
+
+.name {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 2em;
+  margin-bottom: 0.25em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.heading {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 1.5em;
+  font-weight: lighter;
+  padding: 0 2em;
 }
 
-.App-link {
-  color: #61dafb;
+.text {
+  font-size: larger;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.section {
+  margin-top: 5em;
 }
