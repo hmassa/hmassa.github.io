@@ -1,0 +1,21 @@
+.go-to {
+  color: #08114d;
+}
+
+.project-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #62657a;
+}
+
+.project-date {
+  margin: 0.2em;
+  color: #62657a;
+  font-size: 0.9em;
+}
+
+.project-description {
+  margin-top: 1em;
+  text-align: justify;
+  text-justify: space-between;
+}

@@ -2,9 +2,14 @@ import React from 'react';
 import './App.css';
 import image from './assets/squareProfile.jpg';
 import {Grid} from '@material-ui/core';
-import Job from "./interrfaces/Job";
-import JobCard from "./components/JobCard";
-import { Experience } from "./assets/data";
+import Job from "./interfaces/Job";
+import JobCard from "./components/JobCard/JobCard";
+import ProjectCard from "./components/ProjectCard/ProjectCard";
+import Bubble from "./components/Bubble/Bubble";
+import { Contacts, Experience, LangsAndTechs, Projects } from "./assets/data";
+import Project from './interfaces/Project';
+import Contact from './interfaces/Contact';
+import Skill from './interfaces/Skill';
 
 function App() {
   return (
@@ -22,13 +27,21 @@ function App() {
             my master's degree in computer science at the University of Southern California. I am originally from 
             St. Louis, MO and moved to Los Angeles in August of 2021. I graduated from the University of 
             Missouri-Columbia in May of 2021 with a B.S. in mathematics and a B.S. in computer science. 
-            I have a lot of experience with frontend web development and some experience with backend web development.
+            I have a lot of experience with web development, expecially frontend development.
             I also enjoy studying data structures and algorithms and with my background in math I am looking to get more
             experience in machine learning and data science. Really, I love just about anything that involves puzzles and code!</div>
           </Grid>
         </Grid>
         <div className="section">
-          <h2 className="heading left">Experience</h2>
+          <h2 className="heading left">Contact</h2>
+            {Contacts.map((contact: Contact, index: number) => {
+              return(
+                  <Bubble key={index} contact={contact} skill={null}/>
+              )
+            })}
+        </div>
+        <div className="section">
+          <h2 className="heading right">Experience</h2>
           <Grid container spacing={2} alignItems="stretch">
             {Experience.map((job: Job, index: number) => {
               return(
@@ -40,10 +53,28 @@ function App() {
           </Grid>
         </div>
         <div className="section">
-          <h2 className="heading right">Projects</h2>
+          <h2 className="heading left">Projects</h2>
+          <div>
+          <Grid container spacing={2} alignItems="stretch">
+            {Projects.map((project: Project, index: number) => {
+              return(
+                <Grid key={index} item xs={12} md={6} lg={4}>
+                  <ProjectCard project={project}/>
+                </Grid>
+              )
+            })}
+          </Grid>
+          </div>
         </div>
         <div className="section">
-          <h2 className="heading left">Languages + Technologies</h2>
+          <h2 className="heading right">Languages + Technologies</h2>
+          <div>
+            {LangsAndTechs.map((skill: Skill, index: number) => {
+              return (
+                <Bubble key={index} skill={skill} contact={null}/>
+              )
+            })}
+          </div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Job from "../interrfaces/Job";
+import Job from "../../interfaces/Job";
 import "./JobCard.css";
 import { Card, CardContent, CardMedia } from "@material-ui/core"
 
