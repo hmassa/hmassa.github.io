@@ -11,7 +11,7 @@
   font-family: "Montserrat", sans-serif;
   color: var(--secondary);
   background-color: var(--primary);
-  padding: 3% 10%;
+  padding: 3% 10% 10% 10%;
 }
 
 .photo {

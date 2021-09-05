@@ -43,21 +43,36 @@ export const Experience: Job[] = [
         logo: paycom,
         title: "Software Development Intern",
         start: "May 2021",
-        end: "August 2021"
+        end: "August 2021",
+        description: "Software development intern at Paycom, a human capital " +
+        "management technology provider. Worked with three other " + 
+        "interns to develop a real-time company-wide broadcast system " + 
+        "using React for the fron-end, ASP.NET Core MVC for the backend, " +
+        "and a MySQL database. Served as the team leader."
     }, 
     {
         company: "University of Missouri",
         logo: mizzou,
         title: "Student Researcher",
         start: "January 2021",
-        end: "May 2021"
+        end: "May 2021",
+        description: "Worked as a frontend web developer on the RIDSI dashboard " +
+        "as an extension to my senior capstone project. The application " + 
+        "was built using TypeScript, React, and Ionic and used Google " +
+        "Firebase services for data storage/querying and site hosting."
     }, 
     {
         company: "Pfizer",
         logo: pfizer,
         title: "Scientific Informatics Coordinator",
         start: "June 2019",
-        end: "August 2019"
+        end: "August 2019",
+        description: "Internship focused on promoting information security " +
+        "practices to Pfizer colleagues. Responsibilities for this role " +
+        "included developing social campaigns and organizing events to " +
+        "encourage appropriate handling of sensitive information, " +
+        "performing desk sweeps, and evaluating the physical and " +
+        "information security standards of the site."
     }
 ];
 

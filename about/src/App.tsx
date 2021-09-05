@@ -27,7 +27,7 @@ function App() {
             my master's degree in computer science at the University of Southern California. I am originally from 
             St. Louis, MO and moved to Los Angeles in August of 2021. I graduated from the University of 
             Missouri-Columbia in May of 2021 with a B.S. in mathematics and a B.S. in computer science. 
-            I have a lot of experience with web development, expecially frontend development.
+            I have a lot of experience with web development, especially frontend development.
             I also enjoy studying data structures and algorithms and with my background in math I am looking to get more
             experience in machine learning and data science. Really, I love just about anything that involves puzzles and code!</div>
           </Grid>
@@ -45,7 +45,7 @@ function App() {
           <Grid container spacing={2} alignItems="stretch">
             {Experience.map((job: Job, index: number) => {
               return(
-                <Grid key={index} item xs={12} md={6} lg={4}>
+                <Grid key={index} item xs={12} sm={6} md={4}>
                   <JobCard job={job}/>
                 </Grid>
               )
@@ -58,7 +58,7 @@ function App() {
           <Grid container spacing={2} alignItems="stretch">
             {Projects.map((project: Project, index: number) => {
               return(
-                <Grid key={index} item xs={12} md={6} lg={4}>
+                <Grid key={index} item xs={12} sm={6} md={4}>
                   <ProjectCard project={project}/>
                 </Grid>
               )

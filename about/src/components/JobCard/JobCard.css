@@ -4,18 +4,43 @@
   --tertiary: #62657a;
 }
 
-.title {
+.title,
+.modal-title {
   font-size: 2em;
   font-weight: bold;
   color: var(--tertiary);
 }
 
-.subtitle {
+.subtitle,
+.modal-subtitle {
   font-size: 1.2em;
   margin-bottom: 1.5em;
   color: var(--tertiary);
 }
 
+.modal-title,
+.modal-subtitle {
+  color: var(--secondary);
+}
+
 .logo {
   width: 100%;
+}
+
+.modal {
+  margin: 10% auto;
+  padding: 2em 3em 3em 3em;
+  width: 50%;
+  background-color: var(--tertiary);
+  color: var(--secondary);
+  outline: 0;
+}
+
+.close-btn-container {
+  text-align: right;
+  color: var(--secondary);
+}
+
+.close-btn {
+  cursor: pointer;
 }
