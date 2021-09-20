@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Press+Start+2P&display=swap");
 
 :root {
-  --primary: #08114d;
+  --primary: #030b16;
   --secondary: #f2f3fa;
   --tertiary: #62657a;
 }
@@ -11,13 +11,16 @@
   font-family: "Montserrat", sans-serif;
   color: var(--secondary);
   background-color: var(--primary);
-  padding: 3% 10% 10% 10%;
+  padding: 10%;
+  /* padding-top: 5%; */
+  background-image: url("./assets/technology.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .photo {
-  width: 20em;
+  width: 50%;
   border-radius: 50%;
-  border: 5px solid var(--tertiary);
 }
 
 .name {
@@ -62,4 +65,18 @@
   border-radius: 10px;
   padding: 0.5em 1em;
   margin: 0.3em;
+}
+
+@media only screen and (max-width: 600px) {
+  .photo {
+    width: 100%;
+  }
+
+  .App {
+    padding: 10% 4%;
+  }
+
+  .heading {
+    font-size: 1em;
+  }
 }
