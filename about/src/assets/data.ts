@@ -17,11 +17,6 @@ export const Contacts: Contact[] = [
     },
     {
         logo: FiMail,
-        data: "hmassa@usc.edu",
-        link: "mailto:hmassa@usc.edu",
-    },
-    {
-        logo: FiMail,
         data: "haleyemassa@gmail.com",
         link: "mailto:haleyemassa@gmail.com",
     },
@@ -89,6 +84,7 @@ export const LangsAndTechs: Skill[] = [
     {data: "Matlab"},
     {data: "PHP"},
     {data: "Python"},
+    {data: "PyTorch"},
     {data: "React"}, 
     {data: "SQL"},
     {data: "TypeScript"}

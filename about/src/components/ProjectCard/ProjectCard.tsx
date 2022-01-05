@@ -11,13 +11,13 @@ const ProjectCard = (props: {project : Project}) => {
         <Card style={{height: "100%"}}>
             <CardContent>
                 <Grid container>
-                    <Grid item xs={10}>
+                    <Grid item xs={project.link ? 10 : 12}>
                         <div className="project-title">{project.title}</div>
                         <div className="project-date">{`${project.start} - ${project.end}`}</div>
                     </Grid>
-                    <Grid item xs={2}>
+                    { project.link && <Grid item xs={2}>
                         <a href={project.link} target="_blank" className="go-to"><IoMdOpen size={30} color=""/></a>
-                    </Grid>
+                    </Grid>}
                 </Grid>
                 <div className="project-description" dangerouslySetInnerHTML={{__html: project.description}}></div>
             </CardContent>

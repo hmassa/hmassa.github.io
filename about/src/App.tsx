@@ -19,13 +19,12 @@ function App() {
           <Grid item xs={12} md={6}>
             <img src={image} alt="Haley Massa profile" className="photo"/>
             <h1 className="name">Haley Massa</h1>
-            <div className="text">University of Southern California<br/>MSCS - Spring 2022<br/>Los Angeles, CA</div>
+            <div className="text">B.S. Computer Science, B.S. Mathematics<br/>University of Missouri - Spring 2021<br/></div>
           </Grid>
           <Grid item xs={12} md={6}>
             <h2 className="heading right">About</h2>
-            <div className="text justify">Hello! My name is Haley, and I'm currently working towards
-            my master's degree in computer science at the University of Southern California. I am originally from 
-            St. Louis, MO and moved to Los Angeles in August of 2021. I graduated from the University of 
+            <div className="text justify">Hello! My name is Haley and I'm currently looking for a position as a full-time software engineer.
+            I'm originally from St. Louis, MO and I graduated from the University of 
             Missouri-Columbia in May of 2021 with a B.S. in mathematics and a B.S. in computer science. 
             I have a lot of experience with web development, especially frontend development.
             I also enjoy studying data structures and algorithms and with my background in math I am looking to get more
