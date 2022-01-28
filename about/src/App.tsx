@@ -5,11 +5,10 @@ import {Grid} from '@material-ui/core';
 import Job from "./interfaces/Job";
 import JobCard from "./components/JobCard/JobCard";
 import ProjectCard from "./components/ProjectCard/ProjectCard";
-import Bubble from "./components/Bubble/Bubble";
-import { Contacts, Experience, LangsAndTechs, Projects } from "./assets/data";
+import ContactInfo from "./components/Sections/ContactInfo";
+import { Experience, Projects } from "./assets/data";
 import Project from './interfaces/Project';
-import Contact from './interfaces/Contact';
-import Skill from './interfaces/Skill';
+import SkillSection from './components/Sections/SkillSection';
 
 function App() {
   return (
@@ -31,51 +30,33 @@ function App() {
             experience in machine learning and data science. Really, I love just about anything that involves puzzles and code!</div>
           </Grid>
         </Grid>
-        <div className="section">
-          <h2 className="heading left">Contact</h2>
-            {Contacts.map((contact: Contact, index: number) => {
-              return(
-                  <Bubble key={index} contact={contact} skill={null}/>
-              )
-            })}
-        </div>
-        <div className="section">
-          <h2 className="heading right">Experience</h2>
-          <Grid container spacing={2} alignItems="stretch">
-            {Experience.map((job: Job, index: number) => {
-              return(
-                <Grid key={index} item xs={12} sm={6} md={4}>
-                  <JobCard job={job}/>
-                </Grid>
-              )
-            })}
-          </Grid>
-        </div>
-        <div className="section">
-          <h2 className="heading left">Projects</h2>
-          <div>
-          <Grid container spacing={2} alignItems="stretch">
-            {Projects.map((project: Project, index: number) => {
-              return(
-                <Grid key={index} item xs={12} sm={6} md={4}>
-                  <ProjectCard project={project}/>
-                </Grid>
-              )
-            })}
-          </Grid>
-          </div>
-        </div>
-        <div className="section">
-          <h2 className="heading right">Languages + Technologies</h2>
-          <div>
-            {LangsAndTechs.map((skill: Skill, index: number) => {
-              return (
-                <Bubble key={index} skill={skill} contact={null}/>
-              )
-            })}
-          </div>
-        </div>
       </div>
+      <ContactInfo />
+      <div className="section">
+        <h2 className="heading left">Experience</h2>
+        <Grid container spacing={2} alignItems="stretch">
+          {Experience.map((job: Job, index: number) => {
+            return(
+              <Grid key={index} item xs={12} sm={6} md={4}>
+                <JobCard job={job}/>
+              </Grid>
+            )
+          })}
+        </Grid>
+      </div>
+      <div className="section">
+        <h2 className="heading left">Projects</h2>
+        <Grid container spacing={2} alignItems="stretch">
+          {Projects.map((project: Project, index: number) => {
+            return(
+              <Grid key={index} item xs={12} sm={6} md={4}>
+                <ProjectCard project={project}/>
+              </Grid>
+            )
+          })}
+        </Grid>
+      </div>
+      <SkillSection />
     </div>
   );
 }

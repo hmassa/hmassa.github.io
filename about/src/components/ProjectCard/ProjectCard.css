@@ -1,21 +1,24 @@
+@import url('../../App.css');
+
 .go-to {
-  color: #030b16;
+  color: var(--secondary);
 }
 
 .project-title {
   font-size: 1.4em;
   font-weight: bold;
-  color: #62657a;
+  color: var(--secondary);
 }
 
 .project-date {
   margin: 0.2em;
-  color: #62657a;
   font-size: 0.9em;
+  color: var(--secondary);
 }
 
 .project-description {
   margin-top: 1em;
   text-align: justify;
   text-justify: space-between;
+  color: var(--secondary);
 }

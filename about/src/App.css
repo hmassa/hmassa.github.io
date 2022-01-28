@@ -1,39 +1,52 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Press+Start+2P&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 :root {
-  --primary: #030b16;
-  --secondary: #f2f3fa;
-  --tertiary: #62657a;
+  --background: #f4eae6;
+  --primary: #e57f84;
+  --primary-light: #f7d4d4;
+  --secondary: #1e405c;
+  --tertiary: #679186;
+  --tertiary-light: #bbd4ce;
 }
 
 .App {
   text-align: center;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Quicksand", sans-serif;
   color: var(--secondary);
-  background-color: var(--primary);
-  padding: 10%;
-  /* padding-top: 5%; */
-  background-image: url("./assets/technology.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background-color: var(--background);
+}
+
+.general-info {
+  padding: 5% 8%;
 }
 
 .photo {
   width: 50%;
   border-radius: 50%;
+  border: 2px solid var(--secondary);
 }
 
 .name {
-  font-family: "Press Start 2P", sans-serif;
   font-size: 2em;
   margin-bottom: 0.25em;
 }
 
 .heading {
-  font-family: "Press Start 2P", sans-serif;
-  font-size: 1.5em;
-  font-weight: lighter;
+  font-size: 2em;
+  font-weight: bold;
   padding: 0 1em;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.squeeze {
+  padding: 0 2em;
 }
 
 .text {
@@ -45,24 +58,16 @@
   text-justify: inter-word;
 }
 
-.left {
-  text-align: left;
-}
-
-.right {
-  text-align: right;
-}
-
 .section {
   margin-top: 5em;
+  padding: 0 3em;
 }
 
 .bubble {
   display: inline-flex;
   align-items: center;
-  background-color: var(--tertiary);
-  color: var(--secondary);
-  border-radius: 10px;
+  color: var(--background);
+  border-radius: 20px;
   padding: 0.5em 1em;
   margin: 0.3em;
 }
@@ -72,8 +77,8 @@
     width: 100%;
   }
 
-  .App {
-    padding: 10% 4%;
+  .section {
+    padding: 1em;
   }
 
   .heading {

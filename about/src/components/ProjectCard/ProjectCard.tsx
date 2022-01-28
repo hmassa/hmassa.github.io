@@ -16,7 +16,7 @@ const ProjectCard = (props: {project : Project}) => {
                         <div className="project-date">{`${project.start} - ${project.end}`}</div>
                     </Grid>
                     { project.link && <Grid item xs={2}>
-                        <a href={project.link} target="_blank" className="go-to"><IoMdOpen size={30} color=""/></a>
+                        <a href={project.link} target="_blank" rel="noreferrer" className="go-to"><IoMdOpen size={30} color=""/></a>
                     </Grid>}
                 </Grid>
                 <div className="project-description" dangerouslySetInnerHTML={{__html: project.description}}></div>

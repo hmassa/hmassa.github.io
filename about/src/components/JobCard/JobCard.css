@@ -1,26 +1,25 @@
-:root {
-  --primary: #030b16;
-  --secondary: #f2f3fa;
-  --tertiary: #62657a;
-}
+@import url('../../App.css');
 
 .title,
 .modal-title {
   font-size: 2em;
   font-weight: bold;
-  color: var(--tertiary);
+  font-family: "Quicksand", sans-serif;
 }
 
 .subtitle,
 .modal-subtitle {
   font-size: 1.2em;
   margin-bottom: 1.5em;
-  color: var(--tertiary);
+  font-family: "Quicksand", sans-serif;
 }
 
-.modal-title,
-.modal-subtitle {
+.subtitle, .title {
   color: var(--secondary);
+}
+
+.date {
+  font-family: "Quicksand", sans-serif;
 }
 
 .logo {
@@ -31,14 +30,14 @@
   margin: 10% auto;
   padding: 2em 3em 3em 3em;
   width: 50%;
-  background-color: var(--tertiary);
-  color: var(--secondary);
+  background-color: var(--tertiary-light);
+  color: var(--tertiary);
   outline: 0;
+  border-radius: 5px;
 }
 
 .close-btn-container {
   text-align: right;
-  color: var(--secondary);
 }
 
 .close-btn {
