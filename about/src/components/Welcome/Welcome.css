@@ -4,23 +4,28 @@
     font-family: 'Quicksand', cursive;
     font-size: 7em;
     margin: 0;
+    width: 80%;
 }
 
 .welcome-div {
     height: 100vh;
+    padding: 0 12%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    overflow: hidden;
 }
 
 .circle {
-    width: 15em;
-    height: 15em;
+    width: 27vh;
+    height: 27vh;
     border-radius: 50%;
-    display: inline-block;
+    display: block;
+    margin: auto;
 }
 
 .bubble-div {
-    width: 100%;
+    width: 20%;
+    float: center;
 }
