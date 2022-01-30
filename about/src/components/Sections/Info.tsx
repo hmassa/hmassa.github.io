@@ -13,9 +13,9 @@ const Info = () => {
             </Grid>
             <Grid item xs={12} md={6}>
               <h2 className="heading right">About</h2>
-              <div className="text justify">Hello! My name is Haley and I'm currently looking for a position as a full-time software engineer.
-              I'm originally from St. Louis, MO and I graduated from the University of 
-              Missouri-Columbia in May of 2021 with a B.S. in mathematics and a B.S. in computer science. 
+              <div className="text justify">Hello! My name is Haley. 
+              I graduated from the University of Missouri-Columbia in May of 2021 with a B.S. in mathematics and a B.S. in computer science 
+              and I'm currently looking for a position as a full-time software engineer.
               I have a lot of experience with web development, especially frontend development.
               I also enjoy studying data structures and algorithms and with my background in math I am looking to get more
               experience in machine learning and data science. Really, I love just about anything that involves puzzles and code!</div>
