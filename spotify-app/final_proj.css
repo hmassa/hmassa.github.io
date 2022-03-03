@@ -69,25 +69,12 @@ h1 {
 }
 
 .showcase {
-    height: 258px;
-    overflow: auto;
-}
-
-.showcase::-webkit-scrollbar {
-    background-color: #444;
-    width: 8px;
-}
-
-.showcase::-webkit-scrollbar-thumb {
-    background-color: #1ed760;
-    width: 8px;
-    border-radius: 4px;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .holder {
-    display: inline-block;
-    width: 150px;
-    margin-right: 10px;
+    
 }
 
 .primary {

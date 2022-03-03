@@ -15,7 +15,7 @@ $(document).ready(function() {
         var number = data.items.length;
         for (i = 0; i < number; i++) {
             var track = data.items[i];
-            $("#"+id).append('<div class="holder"><img class="photo" src=' + track.album.images[0].url + '><p class="primary">' + track.name + '</p><p class="secondary">' + track.album.name + '</p></div>');
+            $("#"+id).append(`<div class="holder"><img class="photo" src=${track.album.images[0].url}><p class="primary">${track.name}</p><p class="secondary">${track.album.name}</p></div>`);
         }
                 
     }
@@ -28,7 +28,7 @@ $(document).ready(function() {
         
         for (i = 0; i < number; i++) {
             var artist = data.items[i];
-            $("#"+id).append('<div class="holder"><img class="photo" src=' + artist.images[0].url + '><p class="primary">' + artist.name + '</p><p class="secondary">' + artist.followers.total + ' followers</p></div>');
+            $("#"+id).append(`<div class="holder"><img class="photo" src=${artist.images[0].url}><p class="primary">${artist.name}</p><p class="secondary">${artist.followers.total} followers</p></div>`);
         }
                     
     }
@@ -93,79 +93,74 @@ $(document).ready(function() {
     var access_token = params.access_token,
     state = params.state,
     storedState = localStorage.getItem(stateKey);
-                        
-    if (access_token && (state == null || state !== storedState)) {
-        window.location = 'http://ec2-3-134-97-105.us-east-2.compute.amazonaws.com/finalproject';
+        
+    if (access_token === null) {
+        window.location = 'https://hmassa.github.io/spotify-app';
+    } else if (state == null || state !== storedState) {
+        window.location = 'https://hmassa.github.io/spotify-app';
         alert('There was an error during the authentication. Please try again later.');
     } else {
-      //localStorage.removeItem(stateKey);
-        if (access_token) {
-            // ger user's account info
-            $.ajax({
-                url: 'https://api.spotify.com/v1/me',
-                type: 'GET',
-                headers: {
-                  'Authorization': 'Bearer ' + access_token
-                },
-                success: function(response) {
-                    $("#welcome").html('Welcome, ' + response.display_name + '! Check out the information we\'ve gathered from your Spotify listening history.'); 
-                }
-            });
-                        
-            // get all-time top tracks
-            $.ajax({
-                url: 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=10',
-                type: 'GET',
-                headers: {
+        // ger user's account info
+        $.ajax({
+            url: 'https://api.spotify.com/v1/me',
+            type: 'GET',
+            headers: {
                 'Authorization': 'Bearer ' + access_token
-                },
-                success: function(response) {
-                    displayTracks('all-tracks', response);
-                }
-            });
-                        
-            //get all-time top artists
-            $.ajax({
-                url: 'https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50',
-                type: 'GET',
-                headers: {
-                  'Authorization': 'Bearer ' + access_token
-                },
-                success: function(response) {
-                    displayArtists('all-artists', response);
-                    //console.log(response);
-                    displayGenre('top-genre', response);
-                }
-            });
-                
-            // get this months top tracks
-            $.ajax({
-                url: 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10',
-                type: 'GET',
-                headers: {
-                  'Authorization': 'Bearer ' + access_token
-                },
-                success: function(response) {
-                    displayTracks('month-tracks', response);
-                }
-            });
-                        
-            // get this months top artists
-            $.ajax({
-                url: 'https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=50',
-                type: 'GET',
-                headers: {
-                  'Authorization': 'Bearer ' + access_token
-                },
-                success: function(response) {
-                    displayArtists('month-artists', response);
-                    displayGenre('month-genre', response);
-                }
-            });
+            },
+            success: function(response) {
+                $("#welcome").html(`Welcome, ${response.display_name}! Check out what we\'ve gathered from your Spotify listening history.`); 
+            }
+        });
+                    
+        // get all-time top tracks
+        $.ajax({
+            url: 'https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=10',
+            type: 'GET',
+            headers: {
+            'Authorization': 'Bearer ' + access_token
+            },
+            success: function(response) {
+                displayTracks('all-tracks', response);
+            }
+        });
+                    
+        //get all-time top artists
+        $.ajax({
+            url: 'https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50',
+            type: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + access_token
+            },
+            success: function(response) {
+                displayArtists('all-artists', response);
+                //console.log(response);
+                displayGenre('top-genre', response);
+            }
+        });
             
-            
-        } else {
-            window.location = 'http://ec2-3-134-97-105.us-east-2.compute.amazonaws.com/finalproject';
-        }
+        // get this months top tracks
+        $.ajax({
+            url: 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=10',
+            type: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + access_token
+            },
+            success: function(response) {
+                displayTracks('month-tracks', response);
+            }
+        });
+                    
+        // get this months top artists
+        $.ajax({
+            url: 'https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=50',
+            type: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + access_token
+            },
+            success: function(response) {
+                displayArtists('month-artists', response);
+                displayGenre('month-genre', response);
+            }
+        });  
     }
 });
