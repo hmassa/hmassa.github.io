@@ -73,24 +73,23 @@ h1 {
     flex-flow: row wrap;
 }
 
-.holder {
+/* .holder {
     
+} */
+
+.primary, .secondary {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .primary {
-    margin: 0;
-    padding: 0;
-    height: 60px;
     font-size: 16px;
-    overflow: auto;
 }
 
 .secondary {
-    margin: 0;
-    padding: 0;
-    height: 40px;
     font-size: 12px;
-    overflow: auto;
 }
 
 .photo {
