@@ -93,12 +93,150 @@ $(document).ready(function() {
     var access_token = params.access_token,
     state = params.state,
     storedState = localStorage.getItem(stateKey);
+
+    var test_data = {
+        "items": [
+            {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                            "width": 640
+                        },
+                    ],
+                    "name": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                },
+                "name": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+            },
+            {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                            "width": 640
+                        },
+                    ],
+                    "name": "Creep",
+                },
+                "name": "Creep",
+            },
+            {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                            "width": 640
+                        },
+                    ],
+                    "name": "Creep",
+                },
+                "name": "Creep",
+            },
+            {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                            "width": 640
+                        },
+                    ],
+                    "name": "Creep",
+                },
+                "name": "Creep",
+            },
+            {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                            "width": 640
+                        },
+                    ],
+                    "name": "Creep",
+                },
+                "name": "Creep",
+            },
+            {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                            "width": 640
+                        },
+                    ],
+                    "name": "Creep",
+                },
+                "name": "Creep",
+            },
+            {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                            "width": 640
+                        },
+                    ],
+                    "name": "Creep",
+                },
+                "name": "Creep",
+            },
+            {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                            "width": 640
+                        },
+                    ],
+                    "name": "Creep",
+                },
+                "name": "Creep",
+            },
+            {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                            "width": 640
+                        },
+                    ],
+                    "name": "Creep",
+                },
+                "name": "Creep",
+            },
+            {
+                "album": {
+                    "images": [
+                        {
+                            "height": 640,
+                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                            "width": 640
+                        },
+                    ],
+                    "name": "Creep",
+                },
+                "name": "Creep",
+            },
+        ]
+    };
         
     if (access_token === null) {
         window.location = 'https://hmassa.github.io/spotify-app';
     } else if (state == null || state !== storedState) {
-        window.location = 'https://hmassa.github.io/spotify-app';
-        alert('There was an error during the authentication. Please try again later.');
+        // window.location = 'https://hmassa.github.io/spotify-app';
+        // alert('There was an error during the authentication. Please try again later.');
+        console.log(test_data);
+        displayTracks('all-tracks', test_data);
+
     } else {
         // ger user's account info
         $.ajax({

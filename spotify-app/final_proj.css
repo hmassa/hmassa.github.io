@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
+:root {
+    --green: #1ed760;
+    --dark-gray: #181818;
+    --light-gray: #444;
+    --padding: 3%;
+    --half-padding: 1.5%;
+}
 
 html {
     height: 100%;
@@ -10,7 +17,7 @@ html {
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-image: linear-gradient(to right, #181818, #1ed760);
+    background-image: linear-gradient(to right, var(--dark-gray), var(--green));
 }
 
 .gray-background {
@@ -18,7 +25,7 @@ html {
     padding: 0;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    background-color: #444;
+    background-color: var(--light-gray);
 }
 
 h1 {
@@ -31,7 +38,7 @@ h1 {
     margin: 100px auto;
     width: 40%;
     background-color: white;
-    color: #181818;
+    color: var(--dark-gray);
     border: 1px solid white;
     border-radius: 3px;
 }
@@ -44,38 +51,65 @@ h1 {
     width: 40%;
     margin-top: 2%;
     margin-bottom: 8%;
-    border: 3px solid #1ed760;
+    border: 3px solid var(--green);
     border-radius: 10px;
     cursor: pointer;
 }
 
 #dashboard-background {
-    margin: 50px auto;
-    padding: 30px;
-    width: 85%;
-    background-color: #181818;
+    margin: 4%;
+    padding: 0;
+    background-color: var(--dark-gray);
     color: white;
     text-align: left;
-    border: 5px solid #1ed760;
+    border: 5px solid var(--green);
     border-radius: 5px;
 }
 
 #welcome {
     font-size: 20px;
+    padding: 0 var(--padding);
+}
+
+#dashboard-background h1 {
+    font-size: 4em;
+    padding: var(--padding);
 }
 
 #dashboard-background h3 {
-    font-size: 30px;
+    font-size: 2em;
+    padding: 0 var(--padding);
 }
 
 .showcase {
     display: flex;
     flex-flow: row wrap;
+    margin: 0 var(--half-padding);
 }
 
-/* .holder {
-    
-} */
+.holder {
+    width: 47%;
+    margin: 0 var(--half-padding);
+    margin-bottom: var(--padding);
+}
+
+@media screen and (min-width: 800px) {
+    .holder {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .holder {
+        width: 22%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .holder {
+        width: 17%;
+    }
+}
 
 .primary, .secondary {
     margin: 0;
@@ -85,18 +119,18 @@ h1 {
 }
 
 .primary {
-    font-size: 16px;
+    font-size: 20px;
+    padding-bottom:  0.3em;
 }
 
 .secondary {
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .photo {
     margin: 0;
     padding: 0;
-    width: 150px;
-    height: 150px;
+    width: 100%
 }
 
 .list {
