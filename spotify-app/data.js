@@ -21,14 +21,11 @@ $(document).ready(function() {
     }
                 
     function displayArtists(id, data){
-        if (data.items.length < 10)
-            var number = data.items.length;
-        else 
-            var number = 10;
-        
+        const number = min(10, data.items.length);
+        const inf = new Intl.NumberFormat('en-US');
         for (i = 0; i < number; i++) {
             var artist = data.items[i];
-            $("#"+id).append(`<div class="holder"><img class="photo" src=${artist.images[0].url}><p class="primary">${artist.name}</p><p class="secondary">${artist.followers.total} followers</p></div>`);
+            $("#"+id).append(`<div class="holder"><img class="photo" src=${artist.images[0].url}><p class="primary">${artist.name}</p><p class="secondary">${inf.format(artist.followers.total)} followers</p></div>`);
         }
                     
     }
