@@ -15,13 +15,18 @@ $(document).ready(function() {
         var number = data.items.length;
         for (i = 0; i < number; i++) {
             var track = data.items[i];
-            $("#"+id).append(`<div class="holder"><img class="photo" src=${track.album.images[0].url}><p class="primary">${track.name}</p><p class="secondary">${track.album.name}</p></div>`);
+            $("#"+id).append(
+                `<div class="holder">
+                    <img class="photo" src=${track.album.images[0].url}>
+                    <p class="primary">${track.name}</p>
+                    <p class="secondary">${track.artists[0].name}</p>
+                </div>`);
         }
                 
     }
                 
     function displayArtists(id, data){
-        const number = min(10, data.items.length);
+        const number = Math.min(10, data.items.length);
         const inf = new Intl.NumberFormat('en-US');
         for (i = 0; i < number; i++) {
             var artist = data.items[i];
@@ -30,6 +35,10 @@ $(document).ready(function() {
                     
     }
     
+    function testGenre() {
+        $("#top-genre").html("<ol><li>Pop</li><li>Rock</li><li>Heavy Metal</li></ol>"); 
+    }
+
     function displayGenre(id, data){
         var genreList = [];
         var number = data.items.length;
@@ -81,7 +90,7 @@ $(document).ready(function() {
                 }
             }
         }
-        $("#"+id).html("<p>1. " + name1 + "</p><p>2. " + name2 + "</p><p>3. " + name3 + "</p>");
+        $("#"+id).html("<ol><li>" + name1 + "</li><p>2. " + name2 + "</p><p>3. " + name3 + "</p>");
     }
                 
     var stateKey = 'spotify_auth_state';
@@ -105,6 +114,11 @@ $(document).ready(function() {
                     "name": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
                 },
                 "name": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
+                "artists": [
+                    {
+                        "name": "carolesdaughter"
+                    }
+                ]
             },
             {
                 "album": {
@@ -118,6 +132,11 @@ $(document).ready(function() {
                     "name": "Creep",
                 },
                 "name": "Creep",
+                "artists": [
+                    {
+                        "name": "carolesdaughter"
+                    }
+                ]
             },
             {
                 "album": {
@@ -131,6 +150,11 @@ $(document).ready(function() {
                     "name": "Creep",
                 },
                 "name": "Creep",
+                "artists": [
+                    {
+                        "name": "carolesdaughter"
+                    }
+                ]
             },
             {
                 "album": {
@@ -144,6 +168,11 @@ $(document).ready(function() {
                     "name": "Creep",
                 },
                 "name": "Creep",
+                "artists": [
+                    {
+                        "name": "carolesdaughter"
+                    }
+                ]
             },
             {
                 "album": {
@@ -157,6 +186,11 @@ $(document).ready(function() {
                     "name": "Creep",
                 },
                 "name": "Creep",
+                "artists": [
+                    {
+                        "name": "carolesdaughter"
+                    }
+                ]
             },
             {
                 "album": {
@@ -170,6 +204,11 @@ $(document).ready(function() {
                     "name": "Creep",
                 },
                 "name": "Creep",
+                "artists": [
+                    {
+                        "name": "carolesdaughter"
+                    }
+                ]
             },
             {
                 "album": {
@@ -183,6 +222,11 @@ $(document).ready(function() {
                     "name": "Creep",
                 },
                 "name": "Creep",
+                "artists": [
+                    {
+                        "name": "carolesdaughter"
+                    }
+                ]
             },
             {
                 "album": {
@@ -196,6 +240,11 @@ $(document).ready(function() {
                     "name": "Creep",
                 },
                 "name": "Creep",
+                "artists": [
+                    {
+                        "name": "carolesdaughter"
+                    }
+                ]
             },
             {
                 "album": {
@@ -209,6 +258,11 @@ $(document).ready(function() {
                     "name": "Creep",
                 },
                 "name": "Creep",
+                "artists": [
+                    {
+                        "name": "carolesdaughter"
+                    }
+                ]
             },
             {
                 "album": {
@@ -222,6 +276,11 @@ $(document).ready(function() {
                     "name": "Creep",
                 },
                 "name": "Creep",
+                "artists": [
+                    {
+                        "name": "carolesdaughter"
+                    }
+                ]
             },
         ]
     };
@@ -231,9 +290,8 @@ $(document).ready(function() {
     } else if (state == null || state !== storedState) {
         // window.location = 'https://hmassa.github.io/spotify-app';
         // alert('There was an error during the authentication. Please try again later.');
-        console.log("Hello");
-        console.log(test_data);
-        displayTracks('all-tracks', test_data);
+        // displayTracks('all-tracks', test_data);
+        testGenre();
     } else {
         // ger user's account info
         $.ajax({
@@ -268,7 +326,6 @@ $(document).ready(function() {
             },
             success: function(response) {
                 displayArtists('all-artists', response);
-                //console.log(response);
                 displayGenre('top-genre', response);
             }
         });
