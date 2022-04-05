@@ -90,7 +90,7 @@ $(document).ready(function() {
                 }
             }
         }
-        $("#"+id).html("<ol><li>" + name1 + "</li><p>2. " + name2 + "</p><p>3. " + name3 + "</p>");
+        $("#"+id).html("<ol><li>" + name1 + "</li><li>" + name2 + "</li><li>" + name3 + "</li></ol>");
     }
                 
     var stateKey = 'spotify_auth_state';
