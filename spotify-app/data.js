@@ -234,9 +234,9 @@ $(document).ready(function() {
     } else if (state == null || state !== storedState) {
         // window.location = 'https://hmassa.github.io/spotify-app';
         // alert('There was an error during the authentication. Please try again later.');
+        console.log("Hello");
         console.log(test_data);
         displayTracks('all-tracks', test_data);
-
     } else {
         // ger user's account info
         $.ajax({
