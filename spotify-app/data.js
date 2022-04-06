@@ -13,6 +13,7 @@ $(document).ready(function() {
                 
     function displayTracks(id, data){
         var number = data.items.length;
+        $("#"+id).empty();
         for (i = 0; i < number; i++) {
             var track = data.items[i];
             $("#"+id).append(
@@ -28,7 +29,7 @@ $(document).ready(function() {
     function displayArtists(id, data){
         const number = Math.min(10, data.items.length);
         const inf = new Intl.NumberFormat('en-US');
-        $("#"+id).html('')
+        $("#"+id).empty();
         for (i = 0; i < number; i++) {
             var artist = data.items[i];
             $("#"+id).append(`<div class="holder"><img class="photo" src=${artist.images[0].url}><p class="primary">${artist.name}</p><p class="secondary">${inf.format(artist.followers.total)} followers</p></div>`);
