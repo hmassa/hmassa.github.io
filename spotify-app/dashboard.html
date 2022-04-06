@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Welcome!</title>
+        <title>SpotiStats - Dashboard</title>
 
         <link href="final_proj.css" rel="stylesheet" type="text/css">
         <script src="jquery-3.5.1.min.js"></script>
@@ -15,21 +15,33 @@
 
     <body class="gray-background">
         <div id="dashboard-background">
-            <h1>Your Dashboard</h1>
+            <h1 id="dash-title">Your Dashboard</h1>
             <p id="welcome"></p>
             <div>
                 <h3>Your all-time top tracks</h3>
-                <div class="showcase" id="all-tracks"></div>
+                <div class="showcase" id="all-tracks">
+                    <div class="loader"></div>
+                </div>
                 <h3>Your all-time top artists</h3>
-                <div class="showcase" id="all-artists"></div>
+                <div class="showcase" id="all-artists">
+                    <div class="loader"></div>
+                </div>
                 <h3>Your top tracks this month</h3>
-                <div class="showcase" id="month-tracks"></div>
+                <div class="showcase" id="month-tracks">
+                    <div class="loader"></div>
+                </div>
                 <h3>Your top artists this month</h3>
-                <div class="showcase" id="month-artists"></div>
+                <div class="showcase" id="month-artists">
+                    <div class="loader"></div>
+                </div>
                 <h3 class="genre-title">Your all-time top genres</h3>
-                <div class="list" id="top-genre"></div>
+                <div class="list" id="top-genre">
+                    <div class="loader"></div>
+                </div>
                 <h3 class="genre-title">Your top genres this month</h3>
-                <div class="list" id="month-genre"></div>
+                <div class="list" id="month-genre">
+                    <div class="loader"></div>
+                </div>
             </div>
         </div>
     </body>

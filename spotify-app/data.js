@@ -34,10 +34,6 @@ $(document).ready(function() {
         }
                     
     }
-    
-    function testGenre() {
-        $("#top-genre").html("<ol><li>Pop</li><li>Rock</li><li>Heavy Metal</li></ol>"); 
-    }
 
     function displayGenre(id, data){
         var genreList = [];
@@ -94,204 +90,18 @@ $(document).ready(function() {
     }
                 
     var stateKey = 'spotify_auth_state';
-            
     var params = getHashParams();
     var access_token = params.access_token,
     state = params.state,
     storedState = localStorage.getItem(stateKey);
-
-    var test_data = {
-        "items": [
-            {
-                "album": {
-                    "images": [
-                        {
-                            "height": 640,
-                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                            "width": 640
-                        },
-                    ],
-                    "name": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                },
-                "name": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                "artists": [
-                    {
-                        "name": "carolesdaughter"
-                    }
-                ]
-            },
-            {
-                "album": {
-                    "images": [
-                        {
-                            "height": 640,
-                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                            "width": 640
-                        },
-                    ],
-                    "name": "Creep",
-                },
-                "name": "Creep",
-                "artists": [
-                    {
-                        "name": "carolesdaughter"
-                    }
-                ]
-            },
-            {
-                "album": {
-                    "images": [
-                        {
-                            "height": 640,
-                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                            "width": 640
-                        },
-                    ],
-                    "name": "Creep",
-                },
-                "name": "Creep",
-                "artists": [
-                    {
-                        "name": "carolesdaughter"
-                    }
-                ]
-            },
-            {
-                "album": {
-                    "images": [
-                        {
-                            "height": 640,
-                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                            "width": 640
-                        },
-                    ],
-                    "name": "Creep",
-                },
-                "name": "Creep",
-                "artists": [
-                    {
-                        "name": "carolesdaughter"
-                    }
-                ]
-            },
-            {
-                "album": {
-                    "images": [
-                        {
-                            "height": 640,
-                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                            "width": 640
-                        },
-                    ],
-                    "name": "Creep",
-                },
-                "name": "Creep",
-                "artists": [
-                    {
-                        "name": "carolesdaughter"
-                    }
-                ]
-            },
-            {
-                "album": {
-                    "images": [
-                        {
-                            "height": 640,
-                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                            "width": 640
-                        },
-                    ],
-                    "name": "Creep",
-                },
-                "name": "Creep",
-                "artists": [
-                    {
-                        "name": "carolesdaughter"
-                    }
-                ]
-            },
-            {
-                "album": {
-                    "images": [
-                        {
-                            "height": 640,
-                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                            "width": 640
-                        },
-                    ],
-                    "name": "Creep",
-                },
-                "name": "Creep",
-                "artists": [
-                    {
-                        "name": "carolesdaughter"
-                    }
-                ]
-            },
-            {
-                "album": {
-                    "images": [
-                        {
-                            "height": 640,
-                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                            "width": 640
-                        },
-                    ],
-                    "name": "Creep",
-                },
-                "name": "Creep",
-                "artists": [
-                    {
-                        "name": "carolesdaughter"
-                    }
-                ]
-            },
-            {
-                "album": {
-                    "images": [
-                        {
-                            "height": 640,
-                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                            "width": 640
-                        },
-                    ],
-                    "name": "Creep",
-                },
-                "name": "Creep",
-                "artists": [
-                    {
-                        "name": "carolesdaughter"
-                    }
-                ]
-            },
-            {
-                "album": {
-                    "images": [
-                        {
-                            "height": 640,
-                            "url": "https://i.scdn.co/image/ab67616d0000b273bfdc678421fc052acaf58ef3",
-                            "width": 640
-                        },
-                    ],
-                    "name": "Creep",
-                },
-                "name": "Creep",
-                "artists": [
-                    {
-                        "name": "carolesdaughter"
-                    }
-                ]
-            },
-        ]
-    };
         
     if (access_token === null) {
         window.location = 'https://hmassa.github.io/spotify-app';
     } else if (state == null || state !== storedState) {
         // window.location = 'https://hmassa.github.io/spotify-app';
         // alert('There was an error during the authentication. Please try again later.');
-        // displayTracks('all-tracks', test_data);
-        testGenre();
+
+        $("#welcome").html(`Welcome, Haley! Check out what we\'ve gathered from your Spotify listening history.`); 
     } else {
         // ger user's account info
         $.ajax({
