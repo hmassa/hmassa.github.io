@@ -7,7 +7,6 @@ $(document).ready(function() {
         while ( e = r.exec(q)) {
             hashParams[e[1]] = decodeURIComponent(e[2]);
         }
-
         return hashParams;
     }
                 
@@ -33,61 +32,48 @@ $(document).ready(function() {
         for (i = 0; i < number; i++) {
             var artist = data.items[i];
             $("#"+id).append(`<div class="holder"><img class="photo" src=${artist.images[0].url}><p class="primary">${artist.name}</p><p class="secondary">${inf.format(artist.followers.total)} followers</p></div>`);
-        }
-                    
+        }            
     }
 
     function displayGenre(id, data){
-        var genreList = [];
-        var number = data.items.length;
-        var count = 0, flag = 0;
-        
-        for (var i = 0; i < number; i++){
-            var genres = data.items[i].genres;
-            var len = genres.length;
-            for (var j = 0; j < len; j++){
-                for (var k = 0; k < count; k++){
-                    flag = 0;
-                    if (genres[j] == genreList[k].genre){
-                        flag = 1;
-                        genreList[k].occurences++;
-                        break;
-                    }
+        let genreCounts = {};
+        const number = data.items.length;
+
+        for (let i = 0; i < number; i++) {
+            let genres = data.items[i].genres;
+            let weight = number-i;
+            genres.forEach((genre) => {
+                if (genreCounts[genre]) {
+                    genreCounts[genre] += weight;
+                } else {
+                    genreCounts[genre] = weight;
                 }
-                if (flag == 0) {
-                    var hold = {"genre": genres[j], "occurences": 1}
-                    count = genreList.push(hold);
-                }     
-            }
+            })
         }
-        
-        console.log(genreList);
 
         var first = 0, second = 0, third = 0;
         var name1 = "", name2 = "", name3 = "";
         
-        for (i = 0; i < count; i++){
-            if (genreList[i].occurences > third){
-                if (genreList[i].occurences > second){
-                    if (genreList[i].occurences > first){
-                        third = second;
-                        name3 = name2;
-                        second = first;
-                        name2 = name1;
-                        first = genreList[i].occurences;
-                        name1 = genreList[i].genre;
-                    } else {
-                        third = second;
-                        name3 = name2;
-                        second = genreList[i].occurences;
-                        name2 = genreList[i].genre;
-                    }
-                } else {
-                    third = genreList[i].occurences;
-                    name3 = genreList[i].genre;
-                }
+        for (let key in genreCounts) {
+            let count = genreCounts[key]
+            if (count > first) {
+                third = second;
+                name3 = name2;
+                second = first;
+                name2 = name1;
+                first = count;
+                name1 = key;
+            } else if (count > second) {
+                third = second;
+                name3 = name2;
+                second = count;
+                name2 = key;
+            } else if (count > third) {
+                third = count;
+                name3 = key;
             }
         }
+
         $("#"+id).html("<ol><li>" + name1 + "</li><li>" + name2 + "</li><li>" + name3 + "</li></ol>");
     }
                 
