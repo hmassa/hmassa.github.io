@@ -101,7 +101,8 @@ h1 {
 .showcase {
     display: flex;
     flex-flow: row wrap;
-    margin: 0 var(--half-padding);
+    margin: var(--half-padding);
+    margin-top: 0;
 }
 
 .holder {
@@ -152,7 +153,8 @@ h1 {
 
 .list {
     font-size: 25px;
-    padding: 0 var(--padding);
+    padding: var(--padding);
+    padding-top: 0;
 }
 
 .genre-title {
