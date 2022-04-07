@@ -98,7 +98,7 @@ export const Projects: Project[] = [
         start: "May 2020",
         end: "present",
         description: "Research project that aimed to evaluate the " +
-        "efficiency of a new application of the priority search tree." +
+        "efficiency of a new application of the priority search tree. " +
         "Currently reviewing paper for submission to <i>Innovations in " +
         "Systems and Software Engineering</i>, a NASA journal.",
         link: "https://github.com/hmassa/aopst",
@@ -127,12 +127,12 @@ export const Projects: Project[] = [
     {
         title: "Spotify Listening History App",
         start: "April 2020",
-        end: "May 2020",
+        end: "May 2020, April 2022",
         description: "Web application that has users sign in through Spotify " +
         "and then displays data and analytics about their listening " + 
         "history. Information pulled from the Spotify Web API using " +
         "JavaScript.",
-        link: "https://github.com/hmassa/spotify-app",
+        link: "https://hmassa.github.io/spotify-app",
     },
     {
         title: "Forest Database",
