@@ -1,4 +1,3 @@
-import React from "react";
 import { LangsAndTechs } from "../../assets/data";
 import Skill from "../../interfaces/Skill";
 import Bubble from "../Bubble/Bubble";

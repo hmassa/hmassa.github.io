@@ -28,7 +28,13 @@
 
 .name {
   font-size: 2em;
-  margin-bottom: 0.25em;
+  margin: 0;
+}
+
+.role-title {
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 0.5em;
 }
 
 .heading {

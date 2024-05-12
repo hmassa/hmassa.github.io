@@ -5,6 +5,7 @@ import Contact from "../interfaces/Contact";
 import paycom from "./paycom.jpg";
 import mizzou from "./mizzou.jpg";
 import pfizer from "./pfizer.jpg";
+import ridgeline from "./ridgeline.jpg";
 
 import {FiPhone, FiMail, } from "react-icons/fi";
 import {IoLogoLinkedin, IoLogoGithub} from "react-icons/io";
@@ -33,6 +34,23 @@ export const Contacts: Contact[] = [
 ];
 
 export const Experience: Job[] = [
+    {
+        company: "Ridgeline",
+        logo: ridgeline,
+        title: "Product Engineer",
+        start: "May 2022",
+        end: "Current",
+        description: "Product engineer at Ridgeline, a cloud platform for investment " +
+        " anagement. Working as a full stack software engineer on the Users and Entitlements" +
+        " team responsible for building authentication and authorization systems for use " +
+        "across the application. Architected and implemented a user audit trail service " +
+        "that tracks user authentication actions and entitlement changes, centralizes the data, " +
+        "and returns all results to a UI in under 5 seconds. Assisted with transitioning the " +
+        "application’s identity provider to Auth0 from Cognito, working across the organization " +
+        "to implement system-wide object-level access control, designing and developing an automated" +
+        "login test, and developing additional automated tests for use in our CI/CD pipeline. " +
+        "Collaborated with teams across the organization in my role as security and UI liaison"
+    },
     {
         company: "Paycom",
         logo: paycom,
@@ -73,22 +91,25 @@ export const Experience: Job[] = [
 
 export const LangsAndTechs: Skill[] = [
     {data: "Angular"},
-    {data: "C"},
-    {data: "C#"},
-    {data: "C++"},
-    {data: "Firebase"},
+    {data: "Auth0"},
+    {data: "AWS"},
+    {data: "Docker"},
+    {data: "Exposed"},
     {data: "Git"},
-    {data: "Go"},
+    {data: "GraphQL"},
     {data: "HTML/CSS"},
-    {data: "Ionic"}, 
     {data: "Java"},
     {data: "JavaScript"},
-    {data: "Matlab"},
-    {data: "PHP"},
+    {data: "Jest"},
+    {data: "Kafka"},
+    {data: "Kotlin"},
+    {data: "Postgres"},
     {data: "Python"},
-    {data: "PyTorch"},
-    {data: "React"}, 
+    {data: "PyTest"},
+    {data: "React"},
+    {data: "Selenium"}, 
     {data: "SQL"},
+    {data: "Terraform"},
     {data: "TypeScript"}
 ];
 
